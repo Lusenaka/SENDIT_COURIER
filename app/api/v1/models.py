@@ -35,7 +35,8 @@ class Users(object):
             "username": username,
             "email": email,
             "default_location": default_location,
-            "password": password  
+            "password": password,
+            "role" : self.role 
         } 
 
         save_user = self.udb.append(user)
@@ -68,6 +69,11 @@ class Users(object):
             return make_response(jsonify({
                 "welcome" : "Login successful"
             }))
+        for user in users:
+            if user["role"] == customer:
+                return {'Role' : 'You are a user'}
+            elif user['role'] == admin:
+                return{'Role' : 'You are an admin'}
         
 
 
