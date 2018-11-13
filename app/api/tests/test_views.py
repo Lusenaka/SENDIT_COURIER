@@ -6,7 +6,6 @@ from app.api.tests.test_base import BaseTest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-
 class TestParcel(BaseTest):
 	"""docstring for TestParcel"""
 	def test_new_parcel(self):
@@ -17,3 +16,6 @@ class TestParcel(BaseTest):
 	def test_single_parcel(self):
 		respo= self.client.get('/api/v1/parcels')
 		self.assertEqual(respo.status_code, 200)
+
+if __name__ == "__main__":
+	unittest.main()

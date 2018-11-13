@@ -1,6 +1,7 @@
 import unittest
 import json
-from app.api.tests.test_baseuser import BaseTest
+from app.api.tests.test_base import BaseTest
+
 
 class TestUser(BaseTest):
 	"""docstring for TestUser"""
