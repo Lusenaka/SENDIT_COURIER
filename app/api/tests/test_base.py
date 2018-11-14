@@ -32,12 +32,12 @@ class BaseTest(unittest.TestCase):
             "user_id": 23,
             "username": "Alvin",
             "email": "Alvin@gmail.com",
-            "default_location":'' "Kiambu",
-            "password": "1234"
+            "default_location": "Kiambu",
+            "password": 1234
         }
         self.login_dummy_data = {
             "email": "Alvin@gmail.com",
-            "password": "1234"
+            "password": 1234
         }
 
     def tearDown(self):

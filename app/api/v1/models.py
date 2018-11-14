@@ -4,18 +4,18 @@ from flask_restful import reqparse
 
 users = [
     {
-        "user_id" : 43,
+        "user_id" : 23,
         "username" : "Alvin",
         "email": "Alvin@gmail.com",
         "default_location":"Kiambu",
-        "password":"1234"
+        "password":1234
     },
     {
-        "user_id" : 23,
+        "user_id" : 45,
         "username" : "Charity",
         "email": "Charity@gmail.com",
         "default_location":"Kericho",
-        "password":"54321"
+        "password": 54321
     }]
 
 # User roles
@@ -79,7 +79,7 @@ class Users(object):
 
 parcels = [
     {
-        "order_id" : 54,
+        "order_id" : 56,
         "current_location": "Nairobi",
 	    "receiver_name": "Anne",
 	    "receivers_location": "Mombasa",
