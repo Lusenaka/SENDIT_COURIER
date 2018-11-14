@@ -10,8 +10,6 @@ required.add_argument('email', help = "Fill the email details", required = True)
 required.add_argument('password', help = "Fill the password", required = True)
 
 class CreateParcels(Resource):
-    def __init__(self):
-       pass
     def post(self):
         data = request.get_json()
         current_location = data['current_location']
@@ -24,7 +22,6 @@ class CreateParcels(Resource):
         parcels = parcel.db
         return make_response(jsonify({"message": "The parcel order has been successfully created"}), 200)
 
-
 class AllOrders(Resource):
     """Get the parcel details"""
     def get(self):
@@ -33,25 +30,22 @@ class AllOrders(Resource):
 
 class SpecificOrder(Resource):
     """Get the specific parcel order using order_id"""
+    
     def get(self, order_id):
-        data = request.get_json()
         single_order = parcel.single_parcel(order_id)
         return  single_order
             
 
 class CancelOrder(Resource):
-    def __init__(self):
-        """Cancelling the order"""
-        pass
+    """Cancelling the order"""
     def put(self, order_id):
-        can_order = parcel.cancel_order(order_id)
-        return can_order  
+        cancel_order = parcel.cancel_order(order_id)
+        return cancel_order
+
 class GetOneOrder(Resource):
-    def __init__(self):
-        pass
-    def get(self, order_id):
-        """Getting the specific order using order ID"""
-        all_user_orders = parcel.get_orders_by_specific_user(user_id)
+    """Getting the specific order using order ID"""
+    def get(self, receiver_name):
+        all_user_orders = parcel.get_orders_by_specific_user(receiver_name)
         return all_user_orders
 
 user_save = Users()
@@ -72,9 +66,7 @@ class UserSignup(Resource):
             
         }),201)
 
-
 class UserLogin(Resource):
     def post(self):
         user = required.parse_args()
         return Users.user_login(self,user['email'], user['password'])
-

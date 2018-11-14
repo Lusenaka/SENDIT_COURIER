@@ -23,7 +23,7 @@ class Testing(Config):
     TESTING = True
 
 app_config = {
-    "development": Development,
-    "production": Production,
-    "testing": Testing
-    }
+                 "development": Development,
+                 "production": Production,
+                 "testing": Testing
+             }

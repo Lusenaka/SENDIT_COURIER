@@ -18,7 +18,7 @@ users = [
         "password": 54321
     }]
 
-# User roles
+"""User roles"""
 customer = "Normal user"
 admin = "User administrator"
 
@@ -43,6 +43,7 @@ class Users(object):
         return save_user
 
     def filter_user_detail(self,email):
+        """Using list comprehension to get specific user email"""
         user = [user for user in users if user['email']==email]
         return user
 
@@ -71,12 +72,10 @@ class Users(object):
             }))
         for user in users:
             if user["role"] == customer:
-                return {'Role' : 'You are a user'}
+                return {'Role' : 'You are a customer'}
             elif user['role'] == admin:
                 return{'Role' : 'You are an admin'}
         
-
-
 parcels = [
     {
         "order_id" : 56,
@@ -98,13 +97,11 @@ parcels = [
 	    "price": 5443,
 	    "status": "delivered"
     }]
-
-# Order status after pickup
+"""Order status after pickup"""
 pending= "Your order is waiting to be sent"
 on_transit= "in Transit"
 delivered= "Delivered"
 cancelled= "Cancelled"
-
 
 class ParcelOrder(object):
     """Creating model for parcels"""
@@ -149,11 +146,12 @@ class ParcelOrder(object):
     def clear(self):
     	self.db = []
 
-    def get_orders_by_specific_user(self,user_id):
+    def get_orders_by_specific_user(self,receiver_name):
         """"Return orders by specific user"""
         user_orders = []
-        for parcel in parcels:#Iterate over a sequence
-            if (parcel['user_id'] == str(user_id)):
+        """Iterate over a sequence"""
+        for parcel in parcels:
+            if (parcel['receiver_name'] == receiver_name):
                 user_orders.append(parcel)
             return user_orders
         return "Orders not found", 404

@@ -1,6 +1,7 @@
 import unittest
 import json
-import sys  # fix import errors
+"""The below import will fix import errors"""
+import sys 
 import os
 from app.api.tests.test_base import BaseTest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -9,8 +10,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 class TestParcel(BaseTest):
 	"""docstring for TestParcel"""
 	def test_new_parcel(self):
-		respo= self.client.post('/api/v1/parcel',data = json.dumps(self.parcel_dummy_data), content_type='application/json')
-		self.assertEqual(respo.status_code,200)
+		response= self.client.post('/api/v1/parcel',data = json.dumps(self.parcel_dummy_data), content_type='application/json')
+		self.assertEqual(response.status_code,200)
 
 
 	def test_single_parcel(self):

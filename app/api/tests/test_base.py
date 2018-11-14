@@ -28,7 +28,7 @@ class BaseTest(unittest.TestCase):
             "status": "pending"
         }
 
-        self.user_dummy_data = {
+        self.signup_dummy_data = {
             "user_id": 23,
             "username": "Alvin",
             "email": "Alvin@gmail.com",
@@ -38,6 +38,10 @@ class BaseTest(unittest.TestCase):
         self.login_dummy_data = {
             "email": "Alvin@gmail.com",
             "password": 1234
+        },
+        {
+            "email" : "jane.doe@gmail.com",
+            "password" : "1234"
         }
 
     def tearDown(self):
