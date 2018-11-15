@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/AlvinLusenaka/SENDIT_COURIER/badge.svg?branch=ft-correctionsbranch-161962988)](https://coveralls.io/github/AlvinLusenaka/SENDIT_COURIER?branch=ft-correctionsbranch-161962988)
 # SENDIT-API
 We are expected to create a set of API endpoints
 
@@ -67,5 +68,5 @@ To test the endpointsensure that the following tools are available the follow st
    ### Tools:
      Postman
      Unnitest
-     
+
      
