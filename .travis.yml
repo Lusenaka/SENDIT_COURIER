@@ -8,15 +8,13 @@ install:
  - pip install coverage
 
 script:
-- pytest --with-coverage
+- pytest --cov=app
 
 after_success:
 - "codecov"
 - coveralls
 
-branches: 
- - ft-correctionsbranch-161962988
-
 notifications:
 
   email: false
+  
