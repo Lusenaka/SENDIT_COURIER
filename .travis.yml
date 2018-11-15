@@ -1,13 +1,22 @@
 language: python
 python:
- - "3.6"
+ - "3.6.6"
 
 install:
  - pip install -r requirements.txt
+ - pip install coveralls
+ - pip install coverage
 
- script:
+script:
 - pytest --with-coverage
 
-  after_success:
+after_success:
 - "codecov"
 - coveralls
+
+branches: 
+ - ft-correctionsbranch-161962988
+
+notifications:
+
+  email: false
